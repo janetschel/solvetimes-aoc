@@ -22,7 +22,7 @@ def diff_between_parts(parts) -> str:
     diff = int(parts[str(2)]["get_star_ts"]) - int(parts[str(1)]["get_star_ts"])
     to_part1 = datetime.timedelta(seconds=diff)
 
-    return f"(diff to part 1: {to_part1})"
+    return f"(diff to part 1: {to_part1}s)"
 
 
 def format_member(member_num: int):
@@ -40,7 +40,7 @@ def format_member(member_num: int):
         for part in range(1,3):
             solve_time = parts[str(part)]["get_star_ts"]
             print("day", day, "part", part, "-> ", end="")
-            print(f"{solve_time_from_ts(solve_time, day)} ", end="" if part == 2 else "\n")
+            print(f"{solve_time_from_ts(solve_time, day)}s ", end="" if part == 2 else "\n")
 
             if part == 2:
                 print(diff_between_parts(parts))
