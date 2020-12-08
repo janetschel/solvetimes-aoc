@@ -17,6 +17,7 @@ def solve_time_from_ts(ts, day) -> str:
 
     return f"{solve_time}, at: {hours_since_midnight}"
 
+
 def diff_between_parts(parts) -> str:
     diff = int(parts[str(2)]["get_star_ts"]) - int(parts[str(1)]["get_star_ts"])
     to_part1 = datetime.timedelta(seconds=diff)
@@ -43,9 +44,7 @@ def format_member(member_num: int):
 
             if part == 2:
                 print(diff_between_parts(parts))
-                
         
-
 
 for member_num in members:
     format_member(member_num)
